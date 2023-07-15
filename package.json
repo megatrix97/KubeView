@@ -1,5 +1,5 @@
 {
-  "name": "qubeview",
+  "name": "kubeview",
   "version": "1.0.0",
   "description": "Kubernetes GUI application",
   "main": "main.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/megatrix97/QubeView.git"
+    "url": "https://github.com/megatrix97/KubeView.git"
   },
   "keywords": [
     "kubernetes",
@@ -17,9 +17,9 @@
   "author": "Nithin Banka",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/megatrix97/QubeView/issues"
+    "url": "https://github.com/megatrix97/KubeView/issues"
   },
-  "homepage": "https://github.com/megatrix97/QubeView#readme",
+  "homepage": "https://github.com/megatrix97/KubeView#readme",
   "devDependencies": {
     "electron": "^25.3.0"
   }
