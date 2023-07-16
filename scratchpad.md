@@ -1,6 +1,8 @@
 Features list:
 
 - Show list of all available contexts
+	- custom kube-config file upload
+ 	- Editing kube-config file	 
 - View all the resources
 	- Pod
 		- Quick view
@@ -11,6 +13,7 @@ Features list:
 	- Config maps
 	- Secrets
 	- Services
+	- Endpoints
 	- Replica sets
 	- Deployments
  	- Roles and Role Bindings
