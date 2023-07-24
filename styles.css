@@ -5,6 +5,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+#search-box {
+    display: none;
+    background-color: #3c3c3c;
+    border-color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+}
+
 .flex-container {
     display: flex;
     padding: 0px;
@@ -52,6 +61,6 @@ body {
 .base-container-skeleton {
     width: inherit;
     height: inherit;
-    padding: 1px;
+    padding: 0px;
     margin: 0px;
 }
