@@ -31,7 +31,7 @@
 
         ipcRenderer.on('toggleSearchBarVisibility', () => {
             const searchBox = document.getElementById('search-box');
-            if (searchBox.style.display === 'none') {
+            if (searchBox.style.display === 'none' || searchBox.style.display === '') {
                 searchBox.style.display = 'block'
                 setTimeout(() => {
                     searchBox.style.opacity = '1'
@@ -48,10 +48,6 @@
 </head>
 
 <body>
-    <div id="search-box-container">
-        <input class="base-container-skeleton search-box-font-styles" id="search-box" type="text">
-        <div id="search-suggestions-list"></div>
-    </div>
     <div class="flex-container">
         <div class="menu-nav-bar">
             <ul>
@@ -78,6 +74,10 @@
         <div class="base-container">
             <div class="base-container-skeleton">
                 <h1 style="color: white; position: absolute; top: 40% ; left: 45%;">KubeView</h1>
+            </div>
+            <div id="search-box-container">
+                <input class="search-box-font-styles" id="search-box" type="text">
+                <div id="search-suggestions-list"></div>
             </div>
         </div>
     </div>

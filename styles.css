@@ -13,8 +13,8 @@ body {
     border-style: solid;
     position: absolute;
     width: 30%;
-    top: calc(30% - 12px);
-    left: calc(35%);
+    top: 30%;
+    left: 35%;
     color: #fff;
     padding: 5px;
     opacity: 0;
