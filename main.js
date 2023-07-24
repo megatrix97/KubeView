@@ -18,19 +18,19 @@ const createWindow = () => {
     window.loadFile('start-screen.html')
 }
 
-let shiftPressCount = 0
-let shiftPressTimer = null
+let ctrlPressCount = 0
+let ctrlPressTimer = null
 
 ipcMain.on('ctrlPressed', () => {
-    shiftPressCount += 1
-    if (shiftPressCount === 1) {
-        shiftPressTimer = setTimeout(() => {
-            shiftPressCount = 0
+    ctrlPressCount += 1
+    if (ctrlPressCount === 1) {
+        ctrlPressTimer = setTimeout(() => {
+            ctrlPressCount = 0
         }, 500)
-    } else if (shiftPressCount === 2) {
-        clearTimeout(shiftPressTimer)
-        shiftPressCount = 0
-        window.webContents.send('toggleInputBoxVisibility')
+    } else if (ctrlPressCount === 2) {
+        clearTimeout(ctrlPressTimer)
+        ctrlPressCount = 0
+        window.webContents.send('toggleSearchBarVisibility')
     }
 })
 
