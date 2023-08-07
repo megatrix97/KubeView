@@ -1,45 +1,47 @@
+const { Command } = require('./core/command/Command.js')
+
 const { ipcRenderer } = require('electron')
+
 document.addEventListener('keydown', (event) => {
     if (event.key === "Control") {
-        console.log("Received Control click event")
         ipcRenderer.send('ctrlPressed');
     }
 })
 
 document.addEventListener('click', (event) => {
     // If the clicked element is not the input box, hide it
-    searchBox = document.getElementById('search-box')
-    if (!searchBox.contains(event.target)) {
+    searchBoxContainer = document.getElementById('search-box-container')
+    if (!searchBoxContainer.contains(event.target)) {
         hideSearchBox()   
     }
 })
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
-        hideSearchBox(event)
+        hideSearchBox()
     }
 })
 
 function hideSearchBox() {
-    let searchBox = document.getElementById('search-box')
-    searchBox.style.opacity = '0';
+    let searchBoxContainer = document.getElementById('search-box-container')
+    searchBoxContainer.style.opacity = '0';
         setTimeout(() => {
-            searchBox.style.display = 'none'
+            searchBoxContainer.style.display = 'none'
         }, 300)
 }
 
 ipcRenderer.on('toggleSearchBarVisibility', () => {
-    const searchBox = document.getElementById('search-box');
-    if (searchBox.style.display === 'none' || searchBox.style.display === '') {
-        searchBox.style.display = 'block'
+    const searchBoxContainer = document.getElementById('search-box-container');
+    if (searchBoxContainer.style.display === 'none' || searchBoxContainer.style.display === '') {
+        searchBoxContainer.style.display = 'flex'
         setTimeout(() => {
-            searchBox.style.opacity = '1'
+            searchBoxContainer.style.opacity = '1'
         }, 10)
-        searchBox.focus()
-    } else if (searchBox.style.display === 'block') {
-        searchBox.style.opacity = '0'
+        searchBoxContainer.focus()
+    } else if (searchBoxContainer.style.display === 'flex') {
+        searchBoxContainer.style.opacity = '0'
         setTimeout(() => {
-            searchBox.style.display = 'none'
+            searchBoxContainer.style.display = 'none'
         }, 300)
     }
 })
